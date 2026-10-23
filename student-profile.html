@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,38 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Profile</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f1f5f9;
+      font-family: "Segoe UI", Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 40px 16px;
+      background: linear-gradient(135deg, #dbeafe 0%, #f1f5f9 50%, #e0e7ff 100%);
     }
 
     .profile {
+      width: 100%;
       max-width: 450px;
-      margin: auto;
-      padding: 25px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px #00000015;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      animation: fadeUp 0.6s ease both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    h1 {
+    .profile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1d4ed8, #4f46e5);
+      color: #fff;
+      text-align: center;
+      padding: 32px 20px 56px;
+    }
+
+    .header h1 {
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      margin: -44px auto 12px;
+      border-radius: 50%;
+      background: #fff;
       color: #1d4ed8;
+      font-size: 1.9rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+    }
+
+    .name {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #0f172a;
+    }
+
+    .badge {
+      display: block;
+      width: fit-content;
+      margin: 8px auto 20px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1d4ed8;
+      background: #dbeafe;
+      border-radius: 999px;
+    }
+
+    .info {
+      padding: 0 24px 26px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      background: #f8fafc;
+      border-left: 4px solid #1d4ed8;
+      border-radius: 8px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .row:hover {
+      background: #eff6ff;
+      transform: translateX(4px);
     }
 
     .label {
-      font-weight: bold;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .value {
+      color: #0f172a;
+      text-align: right;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 400px) {
+      .row { flex-direction: column; align-items: flex-start; gap: 2px; }
+      .value { text-align: left; }
     }
   </style>
 </head>
 <body>
   <div class="profile">
-    <h1>Student Profile</h1>
-    <p><span class="label">Name:</span> Muhammad Afnan</p>
-    <p><span class="label">Student ID:</span> 56377</p>
-    <p><span class="label">Program:</span> BS Information Technology</p>
-    <p><span class="label">Semester:</span> 7th</p>
-    <p><span class="label">Course:</span> DevOps</p>
+    <div class="header">
+      <h1>Student Profile</h1>
+    </div>
+
+    <div class="avatar">MA</div>
+    <h2 class="name">Muhammad Afnan</h2>
+    <span class="badge">BS Information Technology</span>
+
+    <div class="info">
+      <div class="row"><span class="label">🆔 Student ID</span><span class="value">56377</span></div>
+      <div class="row"><span class="label">🎓 Program</span><span class="value">BS Information Technology</span></div>
+      <div class="row"><span class="label">📅 Semester</span><span class="value">7th</span></div>
+      <div class="row"><span class="label">⚙️ Course</span><span class="value">DevOps</span></div>
+    </div>
   </div>
 </body>
 </html>
