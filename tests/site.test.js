@@ -7,14 +7,14 @@ const path = require('node:path');
 const filePath = path.join(__dirname, '..', 'src', 'index.html');
 const html = fs.readFileSync(filePath, 'utf8');
 
-// test('website contains the Student Profile heading', () => {
-//   assert.ok(html.includes('<h1>Student Profile</h1>'));
-// });
-
-
 test('website contains the Student Profile heading', () => {
-  assert.ok(html.includes('<h1>Wrong Heading</h1>'));
+  assert.ok(html.includes('<h1>Student Profile</h1>'));
 });
+
+
+// test('website contains the Student Profile heading', () => {
+//   assert.ok(html.includes('<h1>Wrong Heading</h1>'));
+// });
 
 
 test('website contains the DevOps assignment message', () => {
