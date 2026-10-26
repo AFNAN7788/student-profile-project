@@ -1,0 +1,11 @@
+{
+  "name": "student-profile-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Student Profile website for CI/CD assignment",
+  "scripts": {
+    "lint": "node --check tests/site.test.js && node --check scripts/build.js",
+    "test": "node --test",
+    "build": "node scripts/build.js"
+  }
+}
