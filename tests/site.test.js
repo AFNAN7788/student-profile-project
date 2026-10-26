@@ -11,6 +11,12 @@ test('website contains the Student Profile heading', () => {
   assert.ok(html.includes('<h1>Student Profile</h1>'));
 });
 
+
+// test('website contains the Student Profile heading', () => {
+//   assert.ok(html.includes('<h1>Wrong Heading</h1>'));
+// });
+
+
 test('website contains the DevOps assignment message', () => {
   assert.ok(html.includes('DevOps CI/CD assignment'));
 });
